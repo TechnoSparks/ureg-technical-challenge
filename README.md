@@ -10,6 +10,9 @@ A full-stack web application that displays foreign exchange rates with a React f
 - The relationship for the Model is defined under `ureg-task-backend/app/Models/*`. Laravel uses ORM to interact with the database, hence this is where relationships are defined
 
 ### React
+- The application is a Single-Page Application hence no router is used for frontend
+- The main logic is in `ureg-task-frontend/src/App.jsx`
+- Items are loaded by batches, 12 items per batch. Refer API summary in the relevant section in this README
 
 ## 🛠 Technology Stack
 
