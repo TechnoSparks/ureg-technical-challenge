@@ -112,7 +112,7 @@ docker-compose down
    php artisan migrate
    ```
 
-7. **Import the database dump (recommended)**
+7. **Import the database dump**
    ```bash
    mysql -u root -p ureg_task_backend < database_dump.sql
    ```
