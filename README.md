@@ -27,7 +27,7 @@ A full-stack web application that displays foreign exchange rates with a React f
 
 ### 1. Clone and Setup
 ```bash
-git clone <repository-url>
+git clone https://github.com/TechnoSparks/ureg-technical-challenge.git
 cd ureg-technical
 ```
 
