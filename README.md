@@ -2,6 +2,15 @@
 
 A full-stack web application that displays foreign exchange rates with a React frontend and Laravel backend. Users can view current and historical exchange rates with an intuitive date picker interface.
 
+## Application logic
+
+### Laravel
+- The application's routing logic is in `ureg-task-backend/routes/api.php`
+- Each route points to their respective methods in the Controller in `ureg-task-backend/app/Http/Controllers/RateController.php`
+- The relationship for the Model is defined under `ureg-task-backend/app/Models/*`. Laravel uses ORM to interact with the database, hence this is where relationships are defined
+
+### React
+
 ## 🛠 Technology Stack
 
 ### Frontend
@@ -19,6 +28,13 @@ A full-stack web application that displays foreign exchange rates with a React f
 - **Docker** & Docker Compose
 - **nginx** for production frontend serving
 - **Apache** for Laravel backend
+
+These tech stacks are chosen based on the requirements of the Job Description:
+- **Laravel** – to showcase the ability to handle the transitioning of legacy code to modern PHP best practices.
+- **ReactJS** – to demonstrate capability in building responsive, component-based frontends aligned with current industry standards.
+- **MySQL** – as a reliable relational database commonly paired with PHP applications.
+- **Docker** – to illustrate familiarity with containerisation for consistent development and deployment environments.
+
 
 ## 🚀 Quick Start with Docker (Recommended)
 
