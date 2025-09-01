@@ -191,29 +191,26 @@ GET /api/rates/availableDates
 
 ```
 ureg-technical/
-├── docker-compose.yml          # Docker services configuration
-├── README.md                   # This file
-├── ureg-task-frontend/         # React application
+├── docker-compose.yml         # Docker services configuration
+├── README.md                  # This file
+├── ureg-task-frontend/        # React application
 │   ├── src/
 │   │   ├── App.jsx            # Main application component
 │   │   ├── components/        # Reusable components
-│   │   └── assets/           # Static assets
-│   ├── package.json          # Frontend dependencies
-│   ├── Dockerfile            # Frontend container config
-│   └── .env                  # Frontend environment variables
+│   │   └── assets/            # Static assets
+│   ├── package.json           # Frontend dependencies
+│   ├── Dockerfile             # Frontend container config
 └── ureg-task-backend/         # Laravel application
     ├── app/
     │   ├── Http/Controllers/  # API controllers
-    │   └── Models/           # Database models
+    │   └── Models/            # Database models
     ├── database/
-    │   ├── migrations/       # Database schema
-    │   └── seeders/         # Sample data
+    │   └── migrations/        # Database schema
     ├── routes/
-    │   └── api.php          # API route definitions
-    ├── composer.json        # Backend dependencies
-    ├── Dockerfile          # Backend container config
-    ├── .env               # Backend environment variables
-    └── database_dump.sql  # Sample database data
+    │   └── api.php            # API route definitions
+    ├── composer.json          # Backend dependencies
+    ├── Dockerfile             # Backend container config
+    └── .env                   # Backend environment variables
 ```
 
 ## 🔧 Configuration
