@@ -1,0 +1,61 @@
+services:
+  # React Frontend
+  frontend:
+    build:
+      context: ./ureg-task-frontend
+      dockerfile: Dockerfile
+    container_name: ureg-frontend
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    ports:
+      - "3000:80"
+    networks:
+      - ureg-network
+    depends_on:
+      - backend
+
+  # Laravel Backend
+  backend:
+    build:
+      context: ./ureg-task-backend
+      dockerfile: Dockerfile
+    container_name: ureg-backend
+    environment:
+      - DB_HOST=db
+      - DB_USERNAME=laravel
+      - DB_PASSWORD=laravel
+      - DB_DATABASE=ureg_task_backend
+    ports:
+      - "8000:80"
+    volumes:
+      - ./ureg-task-backend:/var/www/html
+      - /var/www/html/vendor
+      - /var/www/html/node_modules
+    networks:
+      - ureg-network
+    depends_on:
+      - db
+
+  # MySQL Database
+  db:
+    image: mysql:8.0
+    container_name: ureg-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ureg_task_backend
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: laravel
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database_dump.sql:/docker-entrypoint-initdb.d/database_dump.sql
+    networks:
+      - ureg-network
+
+volumes:
+  mysql_data:
+
+networks:
+  ureg-network:
+    driver: bridge
